@@ -1,0 +1,4 @@
+node_modules
+logs/*
+config/development.js
+public/uploads/*
