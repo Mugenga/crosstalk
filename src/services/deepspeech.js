@@ -20,6 +20,7 @@ const sendAudio = async (form) => {
       url: url + "/api/v1/stt/http",
       data: form,
       headers: {
+        ...form.getHeaders(),
         'Content-Type': "multipart/form-data",
         Authorization: "Bearer " + secret,
       },
