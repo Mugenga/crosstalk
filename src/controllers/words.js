@@ -93,7 +93,7 @@ router.post(
     const FormData = require("form-data");
     var form = new FormData();
     //consider req.file is the file coming from multer
-    const file = fs.createReadStream(req.file.originalname);
+    const file = fs.createReadStream(req.file.path);
     let emptyFile = true;
 
     file.once("data", (chunk) => {
@@ -108,6 +108,7 @@ router.post(
     });
 
     //return res.send("lol");
+    console.log(req.file)
 
     form.append("audio", fs.createReadStream(req.file.path));
     form.append("namme", "Yves Mugeng");

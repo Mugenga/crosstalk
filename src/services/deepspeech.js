@@ -1,8 +1,15 @@
 const deepSpeech = require("../tools/httpConfig").deepSpeech;
 const axios = require("axios");
 const config = require("config");
-const url = config.get("app.deepSpeechBaseUrl");
-const secret = config.get("app.deepSpeechAuthKey");
+const url =
+  process.env.NODE_ENV !== "production"
+    ? config.get("app.deepSpeechBaseUrl")
+    : process.env.deepSpeechBaseUrl;
+
+const secret =
+  process.env.NODE_ENV !== "production"
+    ? config.get("app.deepSpeechAuthKey")
+    : process.env.deepSpeechBaseUrl;
 
 // Send Audio to DeepSpeech API for speech to txt response
 
