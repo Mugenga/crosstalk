@@ -6,7 +6,7 @@ router.get(
   asyncMiddleware(async (req, res) => {
 
     // TO:DO Send Email
-    return res.status(200).send("Welcome to fress Media");
+    return res.status(200).send("Welcome to Kaze API.");
   })
 );
 
