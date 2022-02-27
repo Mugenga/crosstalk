@@ -23,7 +23,7 @@ const validateWord = (postData) => {
     text_en: Joi.string().min(1),
     text_kin: Joi.string().min(1),
     audio_url: Joi.string().min(1),
-    category: Joi.string().valid('travel', 'restaurants')
+    category: Joi.string().valid('greetings', 'transport', 'market')
   };
   return Joi.object(schema).validate(postData);
 };
